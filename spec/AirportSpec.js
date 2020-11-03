@@ -6,15 +6,23 @@ describe ('Airport', function() {
   });
   describe('#land',function() {
 
-    it('will instruct a plane to land at the airport', function() {
-      expect(airport.land(plane)).toBeTruthy();
-    });
-
     it('after landing it stores a plane in the hangar', function () {
       airport.land(plane)
       expect(airport.hangar.includes(plane)).toEqual(true)
     });
 
+    it('check that two planes have landed and are stored happily in the hangar', function () {
+      airport.land(plane)
+      airport.land(plane)
+      expect(airport.hangar.length).toEqual(2);
+    });
+  });
+
+  describe('#takeoff', function () {
+    airport.land(plane)
+    airport.land(plane)
+    airport.takeoff(plane)
+    expect(airport.hangar.length).toEqual(1);
   });
 
 });

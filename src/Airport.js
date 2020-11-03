@@ -1,7 +1,11 @@
 class Airport {
+  
+  constructor() {
+    this.hangar = []
+  };
 
- land(plane) {
-  return true ;
-}
+  land(plane) {
+    this.hangar.push(plane)
+  };
 
 };
