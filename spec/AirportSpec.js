@@ -19,10 +19,15 @@ describe ('Airport', function() {
   });
 
   describe('#takeoff', function () {
-    airport.land(plane)
-    airport.land(plane)
-    airport.takeoff(plane)
-    expect(airport.hangar.length).toEqual(1);
+    it('checks that a plane has taken off', function () {
+      airport.land(plane)
+      airport.land(plane)
+      airport.takeoff(plane)
+      expect(airport.hangar.length).toEqual(1);
+
+    });
+
+
   });
 
 });
